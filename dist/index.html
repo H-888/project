@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <link rel="stylesheet" href="./lib/layui-v2.5.6/layui/css/layui.css" media="all">
+    <script src="./lib/jquery-2.2.4.js"></script>
+    <script src="./lib/layui-v2.5.6/layui/layui.js"></script>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <script src="./js/ajax.js"></script>
+    <script src="./js/index.js" defer></script>
+    <title>Document</title>
+
+</head>
+
+<body>
+    <!-- 头部 -->
+    <div id="global-search">
+        <div class="search-inner z-clearfix area">
+            <h1 id="logo" class="index-logo" onclick="dataLayer.push({'event':'11100','button':'什么值得买logo'})">
+                <a href="/">
+                    <svg width="181" height="57">
+                        <image xmlns:xlink="http://www.w3.org/1999/xlink"
+                            xlink:href="//res.smzdm.com/resources/public/img/pc_global/logo.svg?v=2019063015"
+                            src="//res.smzdm.com/resources/public/img/pc_global/logo.png?v=2019063015" width="181"
+                            height="57" _hover-ignore="1"></image>
+                    </svg>
+                </a>
+            </h1>
+            <!-- 搜索框 -->
+            <div class="txt">
+                <input type="text" name="title" required lay-verify="required" placeholder="酒水" autocomplete="off"
+                    class="layui-input">
+                <button class="layui-btn layui-btn-danger">搜索</button>
+            </div>
+            <!-- 搜索框 end -->
+            <div class="download">
+                <div class="download-close J_download_close">
+                    <i class="icon-times-o-thin"></i>
+                </div>
+                <div class="download-text">下载App</div>
+                <a href="https://www.smzdm.com/push/">
+                    <svg width="60" height="60">
+                        <image xmlns:xlink="http://www.w3.org/1999/xlink"
+                            xlink:href="https://res.smzdm.com/pc/v1.0/dist/img/embed/download.svg"
+                            src="https://res.smzdm.com/pc/v1.0/dist/img/embed/download.png" width="60" height="60">
+                        </image>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- 导航栏 -->
+    <ul class="layui-nav layui-bg-red" lay-filter="">
+        <li class="layui-nav-item "><a href="">首页</a></li>
+        <li class="layui-nav-item ">
+            <a href="javascript:;">好价</a>
+            <dl class="layui-nav-child">
+                <!-- 二级菜单 -->
+                <dd><a href="">精选好价</a></dd>
+                <dd><a href="">全部好价</a></dd>
+                <dd><a href="">优惠券</a></dd>
+                <dd><a href="">白菜</a></dd>
+            </dl>
+        </li>
+
+        <li class="layui-nav-item ">
+            <a href="javascript:;">社区</a>
+            <dl class="layui-nav-child">
+                <!-- 二级菜单 -->
+                <dd><a href="">好文</a></dd>
+                <dd><a href="">资讯</a></dd>
+                <dd><a href="">众测</a></dd>
+            </dl>
+        </li>
+
+        <li class="layui-nav-item ">
+            <a href="javascript:;">海淘</a>
+            <dl class="layui-nav-child">
+                <!-- 二级菜单 -->
+                <dd><a href="">海淘世界</a></dd>
+                <dd><a href="">海淘指南</a></dd>
+                <dd><a href="">优购全球</a></dd>
+            </dl>
+        </li>
+
+        <li class="layui-nav-item ">
+            <a href="javascript:;">百科</a>
+            <dl class="layui-nav-child">
+                <!-- 二级菜单 -->
+                <dd><a href="">商品百科</a></dd>
+                <dd><a href="">品牌导航</a></dd>
+                <dd><a href="">商家导航</a></dd>
+            </dl>
+        </li>
+        <li class="layui-nav-item ">
+            <a href="javascript:;">更多</a>
+            <dl class="layui-nav-child">
+                <!-- 二级菜单 -->
+                <dd><a href="">值友福利</a></dd>
+                <dd><a href="">金融</a></dd>
+                <dd><a href="">汽车</a></dd>
+                <dd><a href="">旅游</a></dd>
+                <dd><a href="">品类导航</a></dd>
+                <dd><a href="">专题汇总</a></dd>
+                <dd><a href="">招聘专区</a></dd>
+            </dl>
+        </li>
+        <li class="layui-nav-item"><a href="">商业合作</a></li>
+        <li class="layui-nav-item"><a href="">投资者关系</a></li>
+        <li class="layui-nav-item ">
+            <a href="javascript:;">爆料投稿</a>
+            <dl class="layui-nav-child">
+                <!-- 二级菜单 -->
+                <dd><a href="">好价爆料</a></dd>
+                <dd><a href="">写篇文章</a></dd>
+                <dd><a href="">提报百科</a></dd>
+                <dd><a href="">创作活动</a></dd>
+                <dd><a href="">品类导航</a></dd>
+            </dl>
+        </li>
+        <li class="layui-nav-item"><a href="#">登录</a></li>
+        <li class="layui-nav-item"><a href="#">注册</a></li>
+    </ul>
+<!-- 主体 -->
+<div class="main">
+    <div class="area mian-1 clear-fix">
+        <!-- 侧导航 -->
+        <div class="nav-ce clear-fix">
+            <!-- 一级 -->
+            <ul class="oneNav" id="oneNav">
+                <li class="oneNav-li">热门推荐</li>
+                <li class="oneNav-li">热门品牌</li>
+                <li class="oneNav-li">热门推荐</li>
+                <li class="oneNav-li">热门推荐</li>
+                <li class="oneNav-li">热门推荐</li>
+                <li class="oneNav-li">热门推荐</li>
+                <li class="oneNav-li">热门推荐</li>
+                <li class="oneNav-li">热门推荐</li>
+                <li class="oneNav-li">热门推荐</li>
+                <li class="oneNav-li">热门推荐</li>
+            </ul>
+            <!-- 二级 -->
+            <ul class="twoNav" style=" display: none;">
+                <!-- 三级 -->
+            </ul>
+        </div>
+        <div class="carousel clear-fix">
+            <div class="layui-carousel" id="test1">
+                <div carousel-item>
+                  <div><img src="./img/a.jpg" alt=""></div>
+                  <div><img src="./img/b.jpg" alt=""></div>
+                  <div><img src="./img/c.jpg" alt=""></div>
+                  <div><img src="./img/d.jpg" alt=""></div>
+                  <div><img src="./img/f.jpg" alt=""></div>
+                </div>
+              </div>
+            <div id="small-banner-father">
+                <p class="small-banner">
+                    <a href="https://www.smzdm.com/tag/t3jowmn/youhui/" target="_blank">
+                        <img  src="https://eimg.smzdm.com/202008/13/5f34baa67427a1693.png" alt="每日羊毛福利  今日羊毛哪家强  信用卡刷卡指南"_hover-ignore="1">
+                    </a>
+                    <a href="https://www.smzdm.com/tag/%E7%99%BD%E8%8F%9C%E5%85%9A/youhui/" target="_blank">
+                        <img src="https://eimg.smzdm.com/202008/13/5f34baac9b9ba6584.png" alt="白菜好货  一篇看全 分享拆包喜悦" _hover-ignore="1">
+                    </a>
+                    <a href="https://www.smzdm.com/p/24057744/" target="_blank">
+                        <img src="https://eimg.smzdm.com/202008/21/5f3f7e94d981b7890.png" alt="天猫七夕节  个护美妆抢大牌  买一享N">
+                    </a>
+                </p>
+                <p class="small-banner">
+                    <a href="https://www.smzdm.com/tag/tlpgqdo/post/" target="_blank">
+                        <img src="https://eimg.smzdm.com/202008/13/5f34b56a43d068807.png" alt="养车不贵  精选汽车用品  高品质低价格" _hover-ignore="1">
+                    </a>
+                    <a href="https://www.smzdm.com/p/23985955/" target="_blank">
+                        <img src="https://eimg.smzdm.com/202008/21/5f3f5e239d2129451.png" alt="美赞臣 蓝臻智睿 历史低价" _hover-ignore="1">
+                    </a>
+                    <a href="https://www.smzdm.com/p/23997544/" target="_blank">
+                        <img src="https://eimg.smzdm.com/202008/21/5f3f5e421bdb98804.png" alt="数码潮人 电脑数码超品日 爆款直降" _hover-ignore="1">
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+   
+</div>
+
+  <!-- 条目中可以是任意内容，如：<img src=""> -->
+</body>
+</html>

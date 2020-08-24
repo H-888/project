@@ -1,0 +1,40 @@
+body,p,h1,h2,h3,h4,h5,h6,ul,li,ol,dl,dt,dd,form,fieldset,input,figure,figcaption{
+    margin:0;
+    padding:0;
+}
+body{
+    font-size: 16px;
+}
+ul,ol,li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+h1,h2,h3,h4,h5,h6{
+    font-size: 16px;
+    font-weight: normal;
+}
+b,strong{
+    font-weight: normal;
+}
+i,em{
+    font-style: normal;
+}
+.clear-fix:after{
+    content: ".";
+    display: block;
+    clear: both;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+input{
+    outline: none;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
