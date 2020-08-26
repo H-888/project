@@ -1,4 +1,3 @@
-import Ajax from './ajax.js';
 class Account{
     constructor(){
         this.add();

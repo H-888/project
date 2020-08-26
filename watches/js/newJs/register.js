@@ -1,4 +1,3 @@
-import Ajax from './ajax.js';
 class Register {
     constructor() {
         this.add();

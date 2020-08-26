@@ -1,4 +1,4 @@
-export default class Ajax {
+ class Ajax {
     static ajaxPost(url, data){
         return new Promise((resolve, reject) => {
             data = data || {};

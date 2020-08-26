@@ -16,4 +16,14 @@ function insert(){
     }
 }
 
+function select(){
+  $sql = "select * from productlist";
+  $res = sel($sql);
+  if($res){
+      echo json_encode($res);
+  }else{
+      echo '没拿到数据';
+  }
+}
+
 ?>
