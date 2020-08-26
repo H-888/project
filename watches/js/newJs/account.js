@@ -1,6 +1,28 @@
 class Account{
     constructor(){
         this.add();
+        this.ifLogin();
+       
+    }
+    // 判断是否是登录状态
+    ifLogin() {
+        let user = localStorage.getItem('user');
+        if (user) {
+            let topHeaderMain = document.querySelector('.top-header-main');
+            let carts = topHeaderMain.children;
+            carts[2].style.display = 'none';
+        } else {
+            let quitBtn = document.querySelector('#quitBtn');
+            let simpleCart_total = document.querySelector('.simpleCart_total');
+            simpleCart_total.style.display = 'none';
+            quitBtn.style.display = 'none';
+           
+        }
+    }
+    // 退出
+    static quit() {
+        localStorage.removeItem('user');
+        location.reload();
     }
     // 给登录按钮绑定事件
     add(){

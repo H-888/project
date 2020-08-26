@@ -9,10 +9,8 @@ class Index {
     }
     // 绑定事件
     add() {
-        
         window.addEventListener('scroll',()=>{
             let scrollTop = document.documentElement.scrollTop;
-            console.log(this.height);
             if(scrollTop > this.height){
                Index.scroll(this);
                this.height += 500;
@@ -59,7 +57,7 @@ class Index {
                 that.str += `<div class="col-md-3 product-left">
                     <li style="display:none">${ele.id}</li>
                     <div class="product-main simpleCart_shelfItem">
-                        <a href="single.html" class="mask"><img class="img-responsive zoom-img" src="${ele.img}" alt="" /></a>
+                        <a onclick="Index.load(this)" href="javascript:" class="mask"><img class="img-responsive zoom-img" src="${ele.img}" alt="" /></a>
                         <div class="product-bottom">
                             <h3>${ele.productName}</h3>
                             <p>Explore Now</p>
@@ -119,8 +117,14 @@ class Index {
         }
 
     }
+    // 懒加载
     static scroll(ele){
        ele.list(ele);
+    }
+    // 跳转详情页
+   static load(ele){
+       let id = ele.parentNode.parentNode.firstElementChild.innerHTML;
+        location.href = `http://localhost/project2/watches/single.html?id=${id}` ;
     }
 
 }
