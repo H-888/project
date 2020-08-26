@@ -57,7 +57,6 @@ class Products {
                 nav += `<li><a href="javascript:" onclick="Products.list(this)">${i}</a></li>`
             }
             pagination.innerHTML = nav;
-            
         })
     }
     // 跳转详情页

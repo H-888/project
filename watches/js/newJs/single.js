@@ -2,6 +2,7 @@ class Single {
     constructor() {
         this.ifLogin();
         this.list();
+       
     }
      // 判断是否是登录状态
      ifLogin() {
@@ -57,9 +58,11 @@ class Single {
         })
     }
     static addCarts(){
+        
         let addBtn = document.querySelector('.item_add');
        let gId = JSON.parse(addBtn.getAttribute('gId'));
         let user = localStorage.getItem('user');
+        let num = 1;
         if(user){
             user = JSON.parse(user);
             Ajax.ajaxPost('./php/single.php', { fn: 'insert', email: user.email, gId:gId[0].productName, img: gId[0].img,price:gId[0].price}).then(res => {
@@ -69,6 +72,24 @@ class Single {
                     alert('加入购物车成功')
                 }
             })
+        }else{
+            
+            let carts = localStorage.getItem('carts');
+            if (carts) {
+                carts = JSON.parse(carts);
+                for (let attr in carts) {
+                    if (attr == gId[0].productName) {
+                        num = carts[attr].num - 0 + num;
+                    }
+                }
+                carts[gId[0].productName] = { img: gId[0].img, price:gId[0].price, num: num };
+                localStorage.setItem('carts', JSON.stringify(carts));
+            } else {
+                let carts = {};
+                carts[gId[0].productName] = { img: gId[0].img, price:gId[0].price, num: num };
+                localStorage.setItem('carts', JSON.stringify(carts));
+            }
+        
         }
       
     }

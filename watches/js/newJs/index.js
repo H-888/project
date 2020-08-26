@@ -5,6 +5,7 @@ class Index {
         this.list(this);
         this.ifLogin();
         this.add();
+     
         // Index.addGoods(); //拿到页面上的数据生成json对象
     }
     // 绑定事件
@@ -49,6 +50,7 @@ class Index {
     }
     // 渲染页面
     list(that){
+      
         Ajax.ajaxPost('./php/index.php',{fn:'select'}).then(res=>{
             if(!res) return;
             let obj = document.querySelector('.product-one');
@@ -61,7 +63,7 @@ class Index {
                         <div class="product-bottom">
                             <h3>${ele.productName}</h3>
                             <p>Explore Now</p>
-                            <h4><a class="item_add" href="javascript:"><i></i></a> <span class=" item_price">$${ele.price}</span></h4>
+                            <h4><a class="item_add" href="javascript:" onclick="Index.addCart(this)"><i></i></a> <span class=" item_price">$${ele.price}</span></h4>
                         </div>
                         <div class="srch">
                             <span>-50%</span>
@@ -85,6 +87,7 @@ class Index {
     }
     // 加入购物车
     static addCart(ele) {
+       
         let img = ele.parentNode.parentNode.previousElementSibling.firstElementChild;
         let productName = ele.parentNode.parentNode.firstElementChild;
         let price = ele.nextElementSibling;

@@ -3,6 +3,7 @@ class Checkout {
         this.ifLogin();
         this.list();
         this.add();
+        console.log(1);
 
     }
     ifLogin() {
@@ -47,13 +48,14 @@ class Checkout {
                         <li>
                             <span>数量</span>
                             <h3 onclick="Checkout.update(this)" style="cursor:pointer">+</h3>
-                            <p>${ele.num}</p>
+                            <p id= "num">${ele.num}</p>
                             <h3 onclick="Checkout.update(this)" style="cursor:pointer">-</h3>
                         </li>
 					<div class="clearfix"></div>
                             </ul>`
                 })
                 inCheck.innerHTML = str;
+                Checkout.count();
             })
         } else {
 
@@ -74,8 +76,9 @@ class Checkout {
                             </ul>`
             }
             inCheck.innerHTML = str;
+            Checkout.count();
         }
-        Checkout.count();
+        
     }
     // 删除
     static delete(ele) {
@@ -124,16 +127,16 @@ class Checkout {
     }
     // 小计 总数
    static count(){
-    //    let cartHeader = document.querySelectorAll('.cart-header');
        let numObj = document.querySelectorAll('#num');
        let costObj = document.querySelectorAll('.cost');
        let sum = 0;
        let total = 1;
+       console.log(numObj.length);
        for(let i = 0;i<numObj.length; i++){
         sum = numObj[i].innerHTML - 0 + sum;
         total = total + parseFloat(costObj[i].innerHTML * (numObj[i].innerHTML * 100)/100);
         }
-        // console.log(sum,total);
+
         document.querySelector('#sum').innerHTML ='数量:'+ sum +'&nbsp';
         document.querySelector('#total').innerHTML= '小计:'+total;
    }
