@@ -46,7 +46,7 @@ class Account{
                 let user = localStorage.getItem('user');
                 user = res[0];
                 localStorage.setItem('user',JSON.stringify(user));
-                location.href = './index.html';
+                window.history.go(-1);
             }
         })
     }

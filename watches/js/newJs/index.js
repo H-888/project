@@ -16,10 +16,10 @@ class Index {
                this.height += 500;
             }
         })
-
-        
+        // 退出登录事件
         let quitBtn = document.querySelector('#quitBtn');
         quitBtn.addEventListener('click', Index.quit);
+        // 加购物车事件
         let item_add = document.querySelectorAll('.item_add');
         for (let i = 0; i < item_add.length; i++) {
             item_add[i].addEventListener('click', function () {
@@ -115,7 +115,6 @@ class Index {
                 localStorage.setItem('carts', JSON.stringify(carts));
             }
         }
-
     }
     // 懒加载
     static scroll(ele){

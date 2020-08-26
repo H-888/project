@@ -54,9 +54,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<span class="simpleCart_total"></span></div>
 								<img src="images/cart-1.png" alt="" />
 						</a>
-						<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
+						<p>
+							<a href="javascript:;" class="simpleCart_empty">Empty Cart</a>
+							<span id="quitBtn" style="color:#fff;  cursor: pointer; margin-left:10px;"
+								onclick="Products.quit()">退出登录</span>
+						</p>
 						<div class="clearfix"> </div>
 					</div>
+				</div>
+				<div class="col-md-6 top-header-left">
+					<span><a href="./account.html">登录</a></span>
+					<span><a href="./register.html">注册</a></span>
 				</div>
 				<div class="clearfix"></div>
 			</div>
@@ -240,6 +248,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 			<div class="prdt-top">
 				<div class="col-md-9 prdt-left">
+					<nav>
+						<ul class="pagination pagination-lg">
+							<li><a href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+							<li><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">5</a></li>
+							<li><a href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+						</ul>
+					</nav>
 					<div class="product-one">
 						<div class="col-md-4 product-left p-left">
 							<div class="product-main simpleCart_shelfItem">
@@ -282,7 +301,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="clearfix"></div>
 					</div>
-					<div class="product-one">
+					
+	
+					<!-- <div class="product-one">
 						<div class="col-md-4 product-left p-left">
 							<div class="product-main simpleCart_shelfItem">
 								<a href="single.html" class="mask"><img class="img-responsive zoom-img" src="images/p-4.png" alt="" /></a>
@@ -323,8 +344,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 						</div>
 						<div class="clearfix"></div>
-					</div>	
-				</div>	
+					</div>	 -->
+				</div>
+				
 				<div class="col-md-3 prdt-right">
 					<div class="w_sidebar">
 						<section  class="sky-form">
@@ -404,10 +426,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</section>
 					</div>
 				</div>
+
+
+
 				<div class="clearfix"></div>
 			</div>
 		</div>
 	</div>
+	
 	<!--product-end-->
 	<!--information-starts-->
 	<div class="information">
@@ -453,6 +479,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 	</div>
+
 	<!--information-end-->
 	<!--footer-starts-->
 	<div class="footer">
@@ -473,4 +500,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 	<!--footer-end-->	
 </body>
+<script src="./js/newJs/ajax.js"></script>
+<script src="./js/newJs/products.js"></script>
 </html>
